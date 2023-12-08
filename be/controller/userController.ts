@@ -2,7 +2,47 @@ import { Request,Response } from "express";
 import userModel from "../model/userModel";
 import bcrypt from "bcrypt"
 
-export const create = async (req: Request, res: Response) =>{
+export const createFreMo = async (req: Request, res: Response) =>{
+    try {
+        const {companyName, email, password} = req.body;
+        const generateSalt = await bcrypt.genSalt(10)
+        
+        const hashedPassword = await bcrypt.hash(password, generateSalt)
+
+        const user = await userModel.create({companyName, email, password: hashedPassword});
+
+        return res.status(200).json({
+            message: "User created successfully",
+            data: user,
+        })
+    } catch (error) {
+        return res.status(404).json({
+            message: "Error creating user"
+        })
+    }
+};
+
+export const createBroMo = async (req: Request, res: Response) =>{
+    try {
+        const {companyName, email, password} = req.body;
+        const generateSalt = await bcrypt.genSalt(10)
+        
+        const hashedPassword = await bcrypt.hash(password, generateSalt)
+
+        const user = await userModel.create({companyName, email, password: hashedPassword});
+
+        return res.status(200).json({
+            message: "User created successfully",
+            data: user,
+        })
+    } catch (error) {
+        return res.status(404).json({
+            message: "Error creating user"
+        })
+    }
+};
+
+export const createPreMo = async (req: Request, res: Response) =>{
     try {
         const {companyName, email, password} = req.body;
         const generateSalt = await bcrypt.genSalt(10)

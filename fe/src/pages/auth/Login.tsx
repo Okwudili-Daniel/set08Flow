@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import * as yup from 'yup';
 import {useForm} from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -61,7 +61,9 @@ const Login = () => {
             <br />
             <br />
             <div className='w-[95%]'>
-            <button className='w-full flex bg-purple-600 rounded-sm justify-center py-3 text-white'  type="submit"> {toggle ? <SyncLoader color="white" size={11} /> : "Log in"}</button>
+           <NavLink to="/dashboard">
+           <button className='w-full flex bg-purple-600 rounded-sm justify-center py-3 text-white'  type="submit"> {toggle ? <SyncLoader color="white" size={11} /> : "Log in"}</button>
+            </NavLink> 
 
             <div className='text-[12px] mt-2 text-center'>
                 Don't have an Account

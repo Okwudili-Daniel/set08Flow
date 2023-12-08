@@ -37,7 +37,7 @@ const PreMo = () => {
       <div className='border rounded-md w-[500px] min-h-[300px] shadow-sm mx-4 bg-gradient-to-l from-amber-500 via-amber-400 to-amber-400'>
         <form className='pl-4 mt-8 relative' onSubmit={onHandleSubmit}>
             <span className='font-bold text-[20px]'>PreMo</span>
-            <Link to="/landing">
+            <Link to="/">
             <div className='absolute right-10 top-2 text-[25px] '><FaArrowLeft/></div>
             </Link>
             <br />

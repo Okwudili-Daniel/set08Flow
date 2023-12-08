@@ -3,7 +3,6 @@ import * as yup from 'yup';
 import {useForm} from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
-import Loading from '../../component/Loading';
 import { createAccount } from '../../api/authApi';
 import { SyncLoader } from 'react-spinners';
 import { FaArrowLeft } from "react-icons/fa";
@@ -37,7 +36,7 @@ const FreeMo = () => {
       <div className='border rounded-md w-[500px] min-h-[300px] shadow-sm mx-4 bg-gradient-to-l from-green-500 via-green-600 to-green-400'>
         <form className='pl-4 mt-8 relative' onSubmit={onHandleSubmit}>
             <span className='font-bold text-[25px]'>FreeMo</span>
-            <Link to="/landing">
+            <Link to="/">
             <div className='absolute right-10 top-2 text-[25px] '><FaArrowLeft/></div>
             </Link>
             <br />

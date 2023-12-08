@@ -1,8 +1,9 @@
+import Landing from "../component/Landing"
 
 const HomeScreen = () => {
   return (
     <div>
-      HomeScreen
+      <Landing/>
     </div>
   )
 }

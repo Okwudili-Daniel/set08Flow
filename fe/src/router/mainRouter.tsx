@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../component/Layout";
 import HomeScreen from "../pages/HomeScreen";
-import Sign_in from "../pages/Sign_in";
 import PrivateRoute from "./PrivateRouter";
 import Register from "../pages/auth/Register";
 import Login from "../pages/auth/Login";
@@ -9,14 +8,12 @@ import Landing from "../component/Landing";
 import FreeMo from "../pages/auth/FreeMo";
 import BroMo from "../pages/auth/BroMo";
 import PreMo from "../pages/auth/PreMO";
+import DashboardLayout from "../pages/Dashboard/DashboadComponent/DashboardLayout";
+import DashboardHomeScreen from "../pages/Dashboard/DashboardHomeScreen";
 export const mainRouter = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <PrivateRoute>
-      <Layout />
-    </PrivateRoute>
-    ),
+    element: <Layout/>,
     children: [
       {
         index: true,
@@ -53,4 +50,21 @@ export const mainRouter = createBrowserRouter([
     path: "/premo",
     element: <PreMo/>,
   },
+  {
+    path: "/dashboard",
+    element: (<PrivateRoute>
+      <DashboardLayout/>
+    </PrivateRoute>),
+    children: [
+      {
+        index: true,
+        element: <DashboardHomeScreen/>
+      },
+      {
+        index: true,
+        path: "/dashboardDark",
+        element: <DashboardHomeScreen/>
+      }
+    ]
+  }
 ]);
